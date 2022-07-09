@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
+import Categories from './components/categories/Categories';
+
 
 const App = () => {
+
+  
   return (
-    <div>App</div>
-  )
+    <Categories/>
+    
+  );
 }
 
 export default App
