@@ -4,6 +4,7 @@ import FormInput from '../form-input/FormInput';
 import "./signup.styles.scss";
 import Button from "../button/Button"
 
+
 const defaultFormFields ={
   displayName:"",
   email:"",
@@ -14,6 +15,7 @@ const defaultFormFields ={
 const SignupForm = () => {
  const [formFields,setFormFields] = useState(defaultFormFields)
  const {displayName,email,password,confirmPassword} = formFields
+ 
 
  const handleChange = (e)=>{
   const {name,value} = e.target
