@@ -4,6 +4,9 @@ import "./navigation.styles.scss";
 import {ReactComponent as HomeLogo} from "../assets/house-solid.svg";
 import { UserContext } from '../contexts/user.context';
 import { signOutUser } from '../utils/firebase/firebase';
+import CartIcon from '../components/cart-icon/CartIcon';
+import CartDropdown from '../components/cart-dropdown/CartDropdown';
+import { CartContext } from '../contexts/cart.context';
 
 const Navigation = () => {
   const {currentUser} = useContext(UserContext)
@@ -11,6 +14,7 @@ const Navigation = () => {
      await signOutUser()
 
   }
+  const {isCartOpen} = useContext(CartContext)
  return (
     <Fragment>
      <div className='navigation'>
@@ -26,8 +30,10 @@ const Navigation = () => {
        {currentUser ? 
        <span className='nav-link' onClick={signOutHandler}>Sign out</span>
        :<Link className='nav-link' to="/auth">Sign In</Link>}
+       <CartIcon/>
       </div>
-     </div>   
+      {isCartOpen && <CartDropdown/>}
+     </div>       
      <Outlet/>
     </Fragment>
   );
