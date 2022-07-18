@@ -6,11 +6,11 @@ import CartItem from "../cart-item/CartItem";
 import { Link } from 'react-router-dom';
 
 const CartDropdown = () => {
- const {cartItems} = useContext(CartContext)
+ const {cartItems,isCartOpen,setIsCartOpen} = useContext(CartContext)
  
   return (
-    <div className='cart-dropdown-container'>
-     <div className='cart-items'>
+    <div className='cart-dropdown-container' onClick={()=>setIsCartOpen(false)}>
+     <div className='cart-items' onClick={(e)=>e.stopPropagation()}>
       {cartItems.map((item,index)=>{
        return <CartItem key={index} cartItem={item}/>
       })}

@@ -9,7 +9,7 @@ const CartIcon = () => {
     setIsCartOpen(!isCartOpen)
   }
   return (
-    <div className='cart-icon-container' onClick={toggleCart}>
+    <div className='cart-icon-container' onClick={toggleCart} >
       <ShoppingIcon className="shopping-icon"/>
       <span className='item-count'>{count}</span>
     </div>

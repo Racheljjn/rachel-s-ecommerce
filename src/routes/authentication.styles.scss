@@ -1,6 +1,30 @@
 .authentication-container{
  display: flex;
+ flex-direction: row;
  justify-content: space-between;
  width: 900px;
  margin: 30px auto;
+ .sign-in-container{
+  @media only screen and (max-width: 1180px) {
+    margin: 0 auto;
+    width: 80%;
+  
+   }
+
+ }
+ .sign-up-container{
+  @media only screen and (max-width: 1180px) {
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 20px;
+  
+   }
+
+ }
+ @media only screen and (max-width: 1180px) {
+   display:grid ;
+   grid-template-columns: 1fr;
+   
+  }
+ 
 }

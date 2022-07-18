@@ -67,7 +67,7 @@ export const CartProvider = ({ children }) => {
 
   const addItemToCart = (product) =>
     setCartItems(addCartItem(cartItems, product));
-  const decreaseItemFromCart = (product)=>{
+  const removeItemToCart = (product)=>{
     setCartItems(decreaseCartItem(cartItems,product))
 
 
@@ -80,7 +80,7 @@ export const CartProvider = ({ children }) => {
    
     
 
-  const value = { isCartOpen, setIsCartOpen, cartItems, addItemToCart,clearItemFromCart,count,decreaseItemFromCart,cartTotal};
+  const value = { isCartOpen, setIsCartOpen, cartItems, addItemToCart,clearItemFromCart,count,removeItemToCart,cartTotal};
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
